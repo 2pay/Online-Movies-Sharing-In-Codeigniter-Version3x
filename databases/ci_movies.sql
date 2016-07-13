@@ -112,6 +112,13 @@ CREATE TABLE `gf_user` (
   `registration_date` datetime DEFAULT NULL,
   `reset_password_code` text,
   `reset_password_code_until` timestamp NULL DEFAULT NULL,
+  `country` varchar(400) DEFAULT NULL,
+  `about_me` text,
+  `hobbies` text,
+  `pm_notify_mail` varchar(50) DEFAULT NULL,
+  `view_content_to` varchar(100) DEFAULT NULL,
+  `view_recent_visit` varchar(400) DEFAULT NULL,
+  `photo_tagging` text,
   `status` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
