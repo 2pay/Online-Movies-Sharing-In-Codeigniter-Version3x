@@ -72,6 +72,19 @@ CREATE TABLE `gf_film` (
 
 /*Data for the table `gf_film` */
 
+/*Table structure for table `gf_film_comment` */
+
+DROP TABLE IF EXISTS `gf_film_comment`;
+
+CREATE TABLE `gf_film_comment` (
+  `film_id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment_msg` text,
+  `comment_post_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`film_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `gf_film_comment` */
+
 /*Table structure for table `gf_genre` */
 
 DROP TABLE IF EXISTS `gf_genre`;
