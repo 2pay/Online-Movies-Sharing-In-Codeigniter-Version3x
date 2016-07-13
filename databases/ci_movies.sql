@@ -35,6 +35,18 @@ CREATE TABLE `gf_country` (
 
 /*Data for the table `gf_country` */
 
+/*Table structure for table `gf_director` */
+
+DROP TABLE IF EXISTS `gf_director`;
+
+CREATE TABLE `gf_director` (
+  `director_id` int(11) NOT NULL AUTO_INCREMENT,
+  `director_name` varchar(400) DEFAULT NULL,
+  PRIMARY KEY (`director_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `gf_director` */
+
 /*Table structure for table `gf_film` */
 
 DROP TABLE IF EXISTS `gf_film`;
