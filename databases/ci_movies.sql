@@ -31,6 +31,7 @@ CREATE TABLE `gf_film` (
   `trailer` text,
   `film_feature` varchar(1) DEFAULT NULL,
   `film_post_date` datetime DEFAULT NULL,
+  `film_modify` datetime DEFAULT NULL,
   PRIMARY KEY (`film_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
