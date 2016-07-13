@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 	function Index()
 	{
 
-		$data['site_title']='Online Watch Movies Free On Go4film.com';
+		$data['site_title']='Online Watch Movies Free';
 		$this->load->view('header',$data);
 		$this->home_model->Set_free_where();	
 		$this->home_model->Set_sql("SUBSTRING(film_name,1,20) AS f_name,film_name,YEAR(film_release_date) as year,film_post_link,website_poster_url from gf_film");

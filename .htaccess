@@ -1,6 +1,6 @@
 RewriteEngine on
-ErrorDocument 404 http://www.go4film.com/
-RewriteBase /go4film/
+ErrorDocument 404 http://localhost/CI-Movies/
+RewriteBase /CI-Movies/
 RewriteCond %{REQUEST_URI} ^secure_system_folder.*
 RewriteRule ^(.*)$ /index.php?/$1 [L]
 RewriteCond %{REQUEST_URI} ^secure_application_folder.*
