@@ -68,6 +68,9 @@ CREATE TABLE `gf_user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
+  `email` varchar(400) DEFAULT NULL,
+  `reset_password_code` text,
+  `reset_password_code_until` timestamp NULL DEFAULT NULL,
   `status` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
