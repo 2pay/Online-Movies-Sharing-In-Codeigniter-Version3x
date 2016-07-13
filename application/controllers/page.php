@@ -1,7 +1,7 @@
 <?php
 class Page extends CI_Controller {
 
-	function Page()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

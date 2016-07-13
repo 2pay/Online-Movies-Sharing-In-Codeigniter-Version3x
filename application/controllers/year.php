@@ -1,7 +1,7 @@
 <?php
 class Year extends CI_Controller {
 
-	function Year()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

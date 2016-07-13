@@ -1,7 +1,7 @@
 <?php
 class Watch extends CI_Controller {
 
-	function Watch()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

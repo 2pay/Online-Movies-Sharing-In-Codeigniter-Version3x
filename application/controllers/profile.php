@@ -1,7 +1,7 @@
 <?php
 class Profile extends Controller {
 
-	function Profile()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

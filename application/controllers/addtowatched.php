@@ -1,7 +1,7 @@
 <?php
 class Addtowatched extends CI_Controller {
 
-	function Addtowatched()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->db->cache_off();

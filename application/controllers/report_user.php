@@ -1,7 +1,7 @@
 <?php
 class Report_user extends CI_Controller {
 
-	function Report_user()
+	public function __construct()
 	{
 		parent::__construct();
 	}

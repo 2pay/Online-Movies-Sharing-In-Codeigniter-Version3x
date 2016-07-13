@@ -1,7 +1,7 @@
 <?php
 class Letter extends CI_Controller {
 
-	function Letter()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

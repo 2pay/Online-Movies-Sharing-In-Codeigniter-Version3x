@@ -1,7 +1,7 @@
 <?php
 class Addtofavs extends CI_Controller {
 
-	function Addtofavs()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->db->cache_off();

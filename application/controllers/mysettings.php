@@ -1,7 +1,7 @@
 <?php
 class Mysettings extends CI_Controller {
 
-	function Mysettings()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('setting_model');

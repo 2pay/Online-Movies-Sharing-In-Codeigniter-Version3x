@@ -7,7 +7,7 @@ class Home_model extends CI_Model {
 	var $having='';
 	var $limit='';
 	
-	function __construct()
+	public function __construct()
     {
         parent::__construct();
     }

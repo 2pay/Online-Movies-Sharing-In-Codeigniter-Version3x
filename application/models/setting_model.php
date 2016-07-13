@@ -6,7 +6,7 @@ class Setting_model extends CI_Model {
 	var $groupby='';
 	var $limit='';
 	
-	function __construct()
+	public function __construct()
     {
         parent::__construct();
     }

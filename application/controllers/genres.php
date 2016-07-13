@@ -1,7 +1,7 @@
 <?php
 class Genres extends CI_Controller {
 
-	function Genres()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

@@ -1,7 +1,7 @@
 <?php
 class Delfrmwatched extends CI_Controller {
 
-	function Delfrmwatched()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->db->cache_off();

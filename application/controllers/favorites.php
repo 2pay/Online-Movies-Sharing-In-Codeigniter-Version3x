@@ -1,7 +1,7 @@
 <?php
 class Favorites extends CI_Controller {
 
-	function Favorites()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

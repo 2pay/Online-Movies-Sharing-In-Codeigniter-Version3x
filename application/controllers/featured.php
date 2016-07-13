@@ -1,6 +1,6 @@
 <?php
 class Featured extends CI_Controller {
-	function Featured()
+	public function __construct()
 	{
 		parent::__construct();
 	}

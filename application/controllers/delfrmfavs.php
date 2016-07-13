@@ -1,7 +1,7 @@
 <?php
 class Delfrmfavs extends CI_Controller {
 
-	function Delfrmfavs()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->db->cache_off();

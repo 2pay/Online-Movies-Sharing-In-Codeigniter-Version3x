@@ -1,7 +1,7 @@
 <?php
 class Director extends CI_Controller {
 
-	function Director()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

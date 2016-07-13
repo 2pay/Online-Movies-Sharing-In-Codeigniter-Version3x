@@ -1,7 +1,7 @@
 <?php
 class Submit extends CI_Controller {
 
-	function Submit()
+	public function __construct()
 	{
 		parent::__construct();
 	}

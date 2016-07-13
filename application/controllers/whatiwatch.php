@@ -1,7 +1,7 @@
 <?php
 class Whatiwatch extends CI_Controller {
 
-	function Whatiwatch()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->db->cache_off();

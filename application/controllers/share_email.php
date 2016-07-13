@@ -1,7 +1,7 @@
 <?php
 class Share_email extends CI_Controller {
 
-	function Share_email()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

@@ -1,7 +1,7 @@
 <?php
 class Sort extends CI_Controller {
 
-	function Sort()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

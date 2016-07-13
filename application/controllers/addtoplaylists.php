@@ -1,7 +1,7 @@
 <?php
 class Addtoplaylists extends CI_Controller {
 
-	function Addtoplaylists()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

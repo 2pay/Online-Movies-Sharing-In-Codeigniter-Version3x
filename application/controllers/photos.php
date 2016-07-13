@@ -1,7 +1,7 @@
 <?php
 class Photos extends CI_Controller {
 
-	function Photos()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');

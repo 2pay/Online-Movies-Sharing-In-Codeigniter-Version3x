@@ -1,7 +1,7 @@
 <?php
 class Playlists extends CI_Controller {
 
-	function Playlists()
+	public function __construct()
 	{
 		parent::__construct();
 	}

@@ -1,7 +1,7 @@
 <?php
 class Reset_password extends CI_Controller {
 
-	function Reset_password()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('setting_model');
