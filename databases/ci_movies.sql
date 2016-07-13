@@ -119,6 +119,7 @@ CREATE TABLE `gf_user` (
   `view_content_to` varchar(100) DEFAULT NULL,
   `view_recent_visit` varchar(400) DEFAULT NULL,
   `photo_tagging` text,
+  `avatar` text,
   `status` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
