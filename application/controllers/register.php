@@ -1,20 +1,20 @@
 <?php
 class Register extends CI_Controller {
 
-	function Register()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');
 	}
 	
-	function Index()
+	public function Index()
 	{
 		if($this->session->userdata('logged_in')==TRUE)
 		{
 			redirect(base_url());
 			exit(0);
 		}
-		$data['site_title']='Watch Movies Online - Full Movies Online -Go4film.com - Free Movies Online Register';
+		$data['site_title']='Watch Movies Online - Full Movies Online - Free Movies Online Register';
 		$this->load->view('header',$data);
 		$this->home_model->Set_free_where();	
 		$this->home_model->Set_sql("genre_id,genre_name from gf_genre");
@@ -26,23 +26,25 @@ class Register extends CI_Controller {
 		$this->load->helper('recaptchalib');
 		$submitted=$this->input->post('submit');
 		$error_msg['error']='';
-		if(trim($submitted)!=''){
-			$username=$this->input->post('username');
-			$email=$this->input->post('email');
-			$password=$this->input->post('password');
-			$password2=$this->input->post('password2');
-			$gender=$this->input->post('gender');
-			$birth_day_sel=$this->input->post('birth_day_sel');
-			$birth_month_sel=$this->input->post('birth_month_sel');
-			$birth_year_sel=$this->input->post('birth_year_sel');
-			$heard_about=$this->input->post('heard_about');
-			if(empty($birth_day_sel) && empty($birth_month_sel) && empty($birth_year_sel)){
-				$error_msg['error']="<div class='error_message'>Invalid age entered.</div>";
-			}elseif(trim($username)=='' || preg_match("/[^A-Za-z0-9_]/",trim($username))){
+
+		if( trim($submitted) != '' ){
+			$username = $this->input->post('username');
+			$email = $this->input->post('email');
+			$password = $this->input->post('password');
+			$password2 = $this->input->post('password2');
+			$gender = $this->input->post('gender');
+			$birth_day_sel = $this->input->post('birth_day_sel');
+			$birth_month_sel = $this->input->post('birth_month_sel');
+			$birth_year_sel = $this->input->post('birth_year_sel');
+			$heard_about = $this->input->post('heard_about');
+
+			if(empty($birth_day_sel) && empty($birth_month_sel) && empty($birth_year_sel)) {
+				$error_msg['error'] = "<div class='error_message'>Invalid age entered.</div>";
+			}elseif( trim($username) == '' || preg_match("/[^A-Za-z0-9_]/",trim($username)) ) {
 				$error_msg['error']="<div class='error_message'>Only letters, numbers and underscore are allowed for Username</div>";
-			}elseif(strlen(trim($username))<4){
+			}elseif( strlen(trim($username)) < 4 ) {
 				$error_msg['error']="<div class='error_message'>Username needs to be 3 to 17 characters long.</div>";
-			}elseif($this->username_validation()){
+			}elseif( $this->username_validation() ) {
 				$error_msg['error']="<div class='error_message'>You were too late.. <b>$username</b> was already Taken! Try another one..</div>";
 			}elseif(trim($password)=='' && strlen(trim($password)) < 5){
 				$error_msg['error']="<div class='error_message'>That password needs to be at least 5 characters.</div>";
