@@ -37,6 +37,18 @@ CREATE TABLE `gf_film` (
 
 /*Data for the table `gf_film` */
 
+/*Table structure for table `gf_genre` */
+
+DROP TABLE IF EXISTS `gf_genre`;
+
+CREATE TABLE `gf_genre` (
+  `genre_id` int(11) NOT NULL AUTO_INCREMENT,
+  `genre_name` varchar(400) DEFAULT NULL,
+  PRIMARY KEY (`genre_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `gf_genre` */
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
