@@ -1,20 +1,20 @@
 <?php
 class Forgot extends CI_Controller {
 
-	function Forgot()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');
 	}
 	
-	function Index()
+	public function Index()
 	{
 		if($this->session->userdata('logged_in')==TRUE)
 		{
 			redirect(base_url());
 			exit(0);
 		}
-		$data['site_title']='Watch Movies Online - Full Movies Online -Go4film.com - Free Movies Online Forgot Password';
+		$data['site_title']='Watch Movies Online - Full Movies Online - Free Movies Online Forgot Password';
 		$this->load->view('header',$data);
 		$this->home_model->Set_free_where();	
 		$this->home_model->Set_sql("genre_id,genre_name from gf_genre");
@@ -47,12 +47,12 @@ class Forgot extends CI_Controller {
 						if($this->user_model->update_reset_password($user_id,$reset_password))
 						{
 							$this->load->library('email');
-							$this->email->from('support@go4film.com', 'Go4film Support Dept.');
+							$this->email->from('hoi2dap@gmail.com', 'Online Movies Support Dept.');
 							$this->email->to($email);
-							$this->email->bcc('pravat_231@yahoo.co.in');
-							$this->email->reply_to('support@go4film.com','Go4film Support Dept.');
-							$this->email->subject('Go4film Password Assistance');
-							$this->email->message("To initiate the password reset process for your\n ".$email." Go4film Account, click the link below:\n\n".$email_url."\n\nIf clicking the link above doesn't work, please copy and paste the URL in a\nnew browser window instead.\n\nIf you've received this mail in error, it's likely that another user entered\nyour email address by mistake while trying to reset a password. If you didn't\ninitiate the request, you don't need to take any further action and can safely\ndisregard this email.\n\nThank you for using Go4film.\n\n\nThis is a post-only mailing.  Replies to this message are not monitored\nor answered.");
+							$this->email->bcc('hoi2dap@gmail.com');
+							$this->email->reply_to('hoi2dap@gmail.com','Online Movies Support Dept.');
+							$this->email->subject('Online Movies Password Assistance');
+							$this->email->message("To initiate the password reset process for your\n ".$email." Online Movies Account, click the link below:\n\n".$email_url."\n\nIf clicking the link above doesn't work, please copy and paste the URL in a\nnew browser window instead.\n\nIf you've received this mail in error, it's likely that another user entered\nyour email address by mistake while trying to reset a password. If you didn't\ninitiate the request, you don't need to take any further action and can safely\ndisregard this email.\n\nThank you for using Online Movies.\n\n\nThis is a post-only mailing.  Replies to this message are not monitored\nor answered.");
 							if($this->email->send())
 							{
 								$error_msg['error']="<div class='ok_message'>Reset Password link emailed to ".$email.".</div>";
@@ -78,7 +78,7 @@ class Forgot extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
-	function recaptcha_validation()
+	public function recaptcha_validation()
 	{
 		$return = recaptcha_check_answer($this->config->item('6LcpXr0SAAAAAK3XtW9wkH-3z2CZZTu0E2teQzUW'),$_SERVER["REMOTE_ADDR"],$this->input->post("recaptcha_challenge_field"),$this->input->post("recaptcha_response_field"));
 		if(!$return->is_valid)
@@ -91,7 +91,7 @@ class Forgot extends CI_Controller {
 		}
 	}
 	
-	function email_validation()
+	public function email_validation()
 	{
 		$this->load->model('user_model');
 		if($this->user_model->check_authenticate($this->input->post('forgot_email'),'email'))

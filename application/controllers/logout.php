@@ -1,13 +1,13 @@
 <?php
 class Logout extends CI_Controller {
 
-	function Logout()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');
 	}
 	
-	function Index()
+	public function Index()
 	{
 		if(($this->session->userdata('logged_in')==TRUE) || ($this->session->userdata('user_id')!=''))
 		{

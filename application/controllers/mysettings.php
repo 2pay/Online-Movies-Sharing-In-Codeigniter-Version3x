@@ -14,7 +14,7 @@ class Mysettings extends CI_Controller {
 			redirect(base_url());
 			exit(0);
 		}		
-		$data['site_title']='Watch Movies Online - Full Movies Online -Go4film.com - Free Movies Online Profile Settings';
+		$data['site_title']='Watch Movies Online - Full Movies Onlines - Free Movies Online Profile Settings';
 		$this->load->view('header',$data);
 		$this->setting_model->Set_free_where();	
 		$this->setting_model->Set_sql("genre_id,genre_name from gf_genre");

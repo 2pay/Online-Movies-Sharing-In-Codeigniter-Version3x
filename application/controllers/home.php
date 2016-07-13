@@ -1,14 +1,14 @@
 <?php
 class Home extends CI_Controller {
 	
-	function Home()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('home_model');
 		//$this->output->cache(180);
 	}
 	
-	function Index()
+	public function Index()
 	{
 
 		$data['site_title']='Online Watch Movies Free';
@@ -33,12 +33,12 @@ class Home extends CI_Controller {
 		$page['cur_tag_close'] = '</span>';
 		$page['rel_tag'] = 'next';
 		//load the model and get results
-		$offset=(int)$this->uri->segment(2); 
-		if($offset<1) 
+		$offset = (int)$this->uri->segment(2); 
+		if( $offset < 1 ) 
 		{ 
 			$offset=1;
 		}
-		$offset=(($offset-1)*$page['per_page']);
+		$offset = (($offset-1)*$page['per_page']);
 		$this->home_model->Set_free_where();	
 		$this->home_model->Set_sql("gf_film.film_id,film_name,DATE_FORMAT(film_release_date,'%d') AS DATE,DATE_FORMAT(film_release_date,'%m') AS month_ori,DATE_FORMAT(film_release_date,'%M') AS MONTH,DATE_FORMAT(film_release_date,'%Y') AS YEAR,film_release_date,film_feature,film_modify,film_post_link,website_poster_url,film_genre_value AS genres FROM gf_film");
 		$this->home_model->Set_where();
@@ -46,11 +46,11 @@ class Home extends CI_Controller {
 		$this->load->library('sorted');
 		$this->home_model->Set_orderby($this->sorted->order_by());
 		$this->home_model->Set_limit($offset.",".$page['per_page']);
-		$index_data['latest_post']=$this->home_model->latest_post();
+		$index_data['latest_post'] = $this->home_model->latest_post();
 		$page['cur_page'] = $offset;
-		$page['total_rows']=$this->home_model->count_posts();
+		$page['total_rows'] = $this->home_model->count_posts();
 		$this->pagination->initialize($page);
-		$index_data['sort_url']=$this->sorted->sorted_link();
+		$index_data['sort_url'] = $this->sorted->sorted_link();
 		$this->load->view('home/home_index',$index_data);
 		$this->home_model->Set_free_where();
 		$this->home_model->Set_sql("genre_id,genre_name from gf_genre");
@@ -58,11 +58,11 @@ class Home extends CI_Controller {
 		$this->home_model->Set_groupby();
 		$this->home_model->Set_orderby('genre_name');
 		$this->home_model->Set_limit();
-		$sidebar['watch_category']=$this->home_model->latest_post();
+		$sidebar['watch_category'] = $this->home_model->latest_post();
 		$this->load->view('sidebar',$sidebar);		
 		$this->load->view('footer');
 	}
 }
 
 /* End of file home.php */
-/* Location: ./system/application/controllers/home.php */
+/* Location: ./application/controllers/home.php */
