@@ -12,6 +12,17 @@ MySQL - 5.5.48 : Database - online_movies
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*Table structure for table `gf_country` */
+
+DROP TABLE IF EXISTS `gf_country`;
+
+CREATE TABLE `gf_country` (
+  `country_code` varchar(100) DEFAULT NULL,
+  `country_name` varchar(400) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `gf_country` */
+
 /*Table structure for table `gf_film` */
 
 DROP TABLE IF EXISTS `gf_film`;
