@@ -1,14 +1,14 @@
 <?php
 class Do_login extends CI_Controller {
 
-	function Do_login()
+	public function __construct()
 	{
 		parent::__construct();
 		$this->db->cache_off();
 		$this->load->model('home_model');
 	}
 	
-	function Index()
+	public function Index()
 	{
 		if($this->input->post('action')=='user_login'){
 			$post_username=$this->input->post('username');

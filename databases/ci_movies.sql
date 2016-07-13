@@ -49,6 +49,20 @@ CREATE TABLE `gf_genre` (
 
 /*Data for the table `gf_genre` */
 
+/*Table structure for table `gf_user` */
+
+DROP TABLE IF EXISTS `gf_user`;
+
+CREATE TABLE `gf_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `gf_user` */
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
